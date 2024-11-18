@@ -7,6 +7,7 @@ public class HeartPickUp : Collectibles
     [SerializeField] private HeartPickupScriptableObject _heartPickupSO;
     public override void OnCollected()
     {
-        PlayerHealthManager.Instance.PlayerGainHealth(_heartPickupSO.HealAmount);
+        IHealthSystem healthSys = PlayerHealthManager.Instance; //edit here if using different one.
+        healthSys.PlayerGainHealth(_heartPickupSO.HealAmount);
     }
 }

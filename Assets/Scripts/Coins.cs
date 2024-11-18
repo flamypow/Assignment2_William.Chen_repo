@@ -6,6 +6,7 @@ public class Coins : Collectibles
 {
     public override void OnCollected()
     {
-        ScoreManager.Instance.CoinCollected();
+        IScoreSystem scoreSys = ScoreManager.Instance; //edit here if using different one.
+        scoreSys.CoinCollected();
     }
 }

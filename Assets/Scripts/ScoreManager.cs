@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreManager : Singleton<ScoreManager>
+public class ScoreManager : Singleton<ScoreManager>, IScoreSystem
 {
     private int _score = 0;
 
-    private IUIManager _UIManager;
+    private IUIScore _UIManager;
 
     public void Start()
     {

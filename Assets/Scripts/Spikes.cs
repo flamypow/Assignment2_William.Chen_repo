@@ -12,7 +12,9 @@ public class Spikes : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerMovement>().StopPlayerMovement(_spikeStats.StunDuration);
             other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.Normalize(other.transform.position - transform.position)* _spikeStats.Knockback, ForceMode.Impulse);
-            PlayerHealthManager.Instance.PlayerLoseHealth(_spikeStats.Damage);
+            
+            IHealthSystem healthSys = PlayerHealthManager.Instance; //edit here if using different one. 
+            healthSys.PlayerLoseHealth(_spikeStats.Damage);
         }
 
     }

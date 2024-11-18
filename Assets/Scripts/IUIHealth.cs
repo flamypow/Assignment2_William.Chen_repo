@@ -1,9 +1,6 @@
-public interface IUIManager
+public interface IUIHealth
 {
     public void OnPlayerHealthManagerStart(int playerHealth)
-    { }
-
-    public void OnScoreManagerStart(int score)
     { }
 
     public void OnGameOver()
@@ -15,6 +12,4 @@ public interface IUIManager
     public void OnLoseHealth(int amount)
     { }
 
-    public void OnGainCoin(int score)
-    { }
 }

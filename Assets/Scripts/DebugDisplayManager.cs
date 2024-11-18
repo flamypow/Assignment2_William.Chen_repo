@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebugDisplayManager : Singleton<DebugDisplayManager>, IUIManager
+public class DebugDisplayManager : Singleton<DebugDisplayManager>, IUIScore, IUIHealth
 {
     [SerializeField] private DebugLogScriptableObject debugLog;
     public void OnPlayerHealthManagerStart(int playerHealth)
