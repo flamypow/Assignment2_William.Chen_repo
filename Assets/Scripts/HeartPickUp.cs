@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HeartPickUp : Collectibles
 {
-    [SerializeField] private int _healAmount;
+    [SerializeField] private HeartPickupScriptableObject _heartPickupSO;
     public override void OnCollected()
     {
-        PlayerHealthManager.Instance.PlayerGainHealth(_healAmount);
+        PlayerHealthManager.Instance.PlayerGainHealth(_heartPickupSO.HealAmount);
     }
 }

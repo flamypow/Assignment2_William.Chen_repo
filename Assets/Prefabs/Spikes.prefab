@@ -118,6 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309ec0a49bf2e9244873ffcd18b98272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
-  _knockback: 5
-  _stunDuration: 1
+  _spikeStats: {fileID: 11400000, guid: d67adb792b343fa46a6b02b3c64ce109, type: 2}

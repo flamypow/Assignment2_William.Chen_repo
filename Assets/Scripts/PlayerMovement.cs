@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    [SerializeField] private float _speed;
+    private IPlayerInput playerInput;
+    [SerializeField] private PlayerStatsScriptableObject _playerStats;
     private bool _canMove;
 
     private void Start()
     {
+        playerInput = new ArrowKeyInput();
         _canMove = true;
     }
     void Update()
     {
+
         if (_canMove)
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
-            transform.position += new Vector3(horizontal, 0, vertical) * _speed * Time.deltaTime;
+            playerInput.GetInput();
+            transform.position += new Vector3(playerInput.Horizontal, 0, playerInput.Vertical) * _playerStats.MoveSpeed * Time.deltaTime;
         }
     }
 
