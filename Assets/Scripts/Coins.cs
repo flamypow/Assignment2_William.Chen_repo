@@ -8,5 +8,4 @@ public class Coins : Collectibles
     {
         ScoreManager.Instance.CoinCollected();
     }
-
 }
