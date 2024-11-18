@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerHealthManager : Singleton<PlayerHealthManager>
 {
     private int _playerHealth;
-    [SerializeField] private int _startingHealth;
+    [SerializeField] private PlayerStatsScriptableObject _playerStats;
     // Start is called before the first frame update
     void Start()
     {
-        _playerHealth = _startingHealth;
+        _playerHealth = _playerStats.StartingHealth;
         Debug.Log("Current Player Health: " + _playerHealth);
     }
 
@@ -25,7 +25,7 @@ public class PlayerHealthManager : Singleton<PlayerHealthManager>
 
     public void PlayerGainHealth(int amount)
     {
-        if (_playerHealth < _startingHealth)
+        if (_playerHealth < _playerStats.StartingHealth)
         {
             _playerHealth = _playerHealth + amount;
         }

@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703f015c59a6b0e45b48008455c59236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _playerStats: {fileID: 11400000, guid: 598bebef5f6e7ad4ba3dc707ccb2fd9d, type: 2}
 --- !u!54 &59589678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5546674f8964b214eb1717ac93a40c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingHealth: 3
+  _playerStats: {fileID: 11400000, guid: 598bebef5f6e7ad4ba3dc707ccb2fd9d, type: 2}
 --- !u!1 &710887154
 GameObject:
   m_ObjectHideFlags: 0

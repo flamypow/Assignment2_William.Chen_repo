@@ -330,4 +330,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f235f8f109a39ec4d8766e13519578aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healAmount: 1
+  _heartPickupSO: {fileID: 11400000, guid: 0b31fe2426565414da1acd172fb58348, type: 2}
