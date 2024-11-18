@@ -6,20 +6,23 @@ public class PlayerHealthManager : Singleton<PlayerHealthManager>
 {
     private int _playerHealth;
     [SerializeField] private PlayerStatsScriptableObject _playerStats;
+
+    private IUIManager _UIManager;
     // Start is called before the first frame update
     void Start()
     {
+        _UIManager = DebugDisplayManager.Instance;
         _playerHealth = _playerStats.StartingHealth;
-        Debug.Log("Current Player Health: " + _playerHealth);
+        _UIManager.OnPlayerHealthManagerStart(_playerHealth);
     }
 
     public void PlayerLoseHealth(int amount)
     {
         _playerHealth = _playerHealth - amount;
-        Debug.Log("Player Lost Health, Current Player Health: " + _playerHealth);
+        _UIManager.OnLoseHealth(_playerHealth);
         if (_playerHealth <= 0)
         {
-            Debug.Log("You Died, but only this print happens");
+            _UIManager.OnGameOver();
         }
     }
 
@@ -29,7 +32,7 @@ public class PlayerHealthManager : Singleton<PlayerHealthManager>
         {
             _playerHealth = _playerHealth + amount;
         }
-        Debug.Log("Player Gained Health, Current Player Health: " + _playerHealth);
+        _UIManager.OnGainHealth(amount);
     }
 
 }

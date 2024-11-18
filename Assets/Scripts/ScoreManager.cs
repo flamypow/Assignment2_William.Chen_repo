@@ -6,14 +6,18 @@ public class ScoreManager : Singleton<ScoreManager>
 {
     private int _score = 0;
 
+    private IUIManager _UIManager;
+
     public void Start()
     {
-        Debug.Log("Current Score: " + _score);
+        _UIManager = DebugDisplayManager.Instance;
+        _UIManager.OnScoreManagerStart(_score);
+
     }
     public void CoinCollected()
     {
         _score++;
-        Debug.Log("Coin Collected, Current Score: " + _score);
+        _UIManager.OnGainCoin(_score);
     }
 
 }
